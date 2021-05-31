@@ -14,6 +14,7 @@ if(__name__ == "__main__"):
             O que deseja fazer:
             [ 1 ] Acordar Personagem
             [ 2 ] Deixar dormindo
+            [ 0 ] Sair
         '''))
         if(opcao == 1):
             while True:
@@ -27,12 +28,7 @@ if(__name__ == "__main__"):
             [ 2 ] Fazer café
             [ 3 ] Pedir café
             [ 4 ] Ir traballhar
-            [ 5 ] Ir trabalhar
-            [ 6 ]
-            [ 7 ]
-            [ 8 ]
-            [ 9 ]
-            [ 0 ]
+            [ 0 ] Sair
         '''))
                 if (opcao == 1):
                     personagem.sujo = False
@@ -42,7 +38,6 @@ if(__name__ == "__main__"):
                         casa.comida -= 1
                         cafe_da_manha = True
                         personagem.fome = False
-
                     else:
                         print("Não há comida em casa.")
                 elif (opcao == 3):
@@ -73,3 +68,31 @@ if(__name__ == "__main__"):
                     print(
                         f'Você recebeu {recebido:.2f} reais pelo seu trabalho hoje.')
                     personagem.dinheiro += recebido
+                    break
+                elif (opcao == 0):
+                    break
+            while True:
+                opcao = int(input('''
+                O que deseja fazer:
+                [ 1 ] Assistir aula Blue
+                [ 2 ] Não assistir aula
+                [ 3 ] Dormir
+                [ 0 ] Sair
+            '''))
+                if (opcao == 1):
+                    print('Você será um ótimo Dev')
+                elif (opcao == 2):
+                    print('Uma pena ter perdido aula hoje.')
+                elif (opcao == 3):
+                    personagem.dormindo = True
+                    print(personagem)
+                    break
+                elif (opcao == 0):
+                    break
+        elif (opcao == 2):
+            print('Seu personagem passou dia dormindo')
+            recebido = 50
+            print(f'Será descontado - R${recebido:.2f} do salario')
+        elif (opcao == 0):
+            print('Sistema finalizado. Volte sempre')
+            break
